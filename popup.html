@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>ChatGPT Style Selector</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Existing Speech Bubble Popups -->
+    <div class="speech-bubble pencil-info hidden">
+      <p>Toggle this off to hide ChatGPT response styles button</p>
+      <button class="info-acknowledge">Got it!</button>
+    </div>
+
+    <div class="speech-bubble sync-info hidden">
+      <p>Control how styles work across tabs:</p>
+      <ul>
+        <li>ON: All tabs share the same style</li>
+        <li>OFF: Each tab has its own style</li>
+      </ul>
+      <button class="info-acknowledge">Got it!</button>
+    </div>
+
+    <div class="speech-bubble enter-key-info hidden">
+      <p>Control how the numpad Enter key works:</p>
+      <ul>
+        <li>ON: Numpad Enter creates a new line</li>
+        <li>OFF: Numpad Enter sends the message</li>
+      </ul>
+      <button class="info-acknowledge">Got it!</button>
+    </div>
+
+    <!-- New Text Direction Info Bubble -->
+    <div class="speech-bubble text-direction-info hidden">
+      <p>Control text direction in messages:</p>
+      <ul>
+        <li>LTR: All text aligned left-to-right</li>
+        <li>RTL: All text aligned right-to-left</li>
+        <li>Dynamic: Automatically detects language direction</li>
+      </ul>
+      <button class="info-acknowledge">Got it!</button>
+    </div>
+
+    <!-- Existing Header Sections -->
+    <div class="header">
+      <div class="title-section">
+        <span class="pencil-icon" title="Click for info">✏️</span>
+        <span>ChatGPT Style Selector</span>
+      </div>
+      <label class="switch">
+        <input type="checkbox" id="toggle-button">
+        <span class="slider round"></span>
+        <span class="toggle-text">OFF</span>
+      </label>
+    </div>
+
+    <div class="sync-toggle-container">
+      <div class="title-section">
+        <span class="sync-icon" title="Click for info">🔄</span>
+        <span>Style Mode tab Sync</span>
+      </div>
+      <label class="switch">
+        <input type="checkbox" id="sync-toggle-button">
+        <span class="slider round"></span>
+        <span class="toggle-text">OFF</span>
+      </label>
+    </div>
+
+    <div class="enter-key-toggle-container">
+      <div class="title-section">
+        <span class="enter-key-icon" title="Click for info">⌨️</span>
+        <span>Numpad Enter New Line</span>
+      </div>
+      <label class="switch">
+        <input type="checkbox" id="enter-key-toggle-button">
+        <span class="slider round"></span>
+        <span class="toggle-text">OFF</span>
+      </label>
+    </div>
+
+    <!-- New Text Direction Section -->
+    <div class="text-direction-container">
+      <div class="title-section">
+        <span class="text-direction-icon" title="Click for info">↔️</span>
+        <span>Text Direction</span>
+      </div>
+      <div class="direction-select-wrapper">
+        <select id="text-direction-select">
+          <option value="dynamic">Dynamic</option>
+          <option value="ltr">LTR</option>
+          <option value="rtl">RTL</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

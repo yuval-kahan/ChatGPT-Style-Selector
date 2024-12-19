@@ -1,0 +1,605 @@
+body {
+  width: 250px;
+  margin: 0;
+  padding: 8px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 8px;
+  padding: 8px;
+  position: relative;
+  height: fit-content;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px;
+}
+
+.title-section {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #333;
+}
+
+.pencil-icon {
+  font-size: 16px;
+}
+
+/* Toggle switch styles */
+.switch {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+  background-color: #ccc;
+  border-radius: 20px;
+  transition: .4s;
+  cursor: pointer;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  border-radius: 50%;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+  transform: translateX(20px);
+}
+
+.toggle-text {
+  font-size: 12px;
+  font-weight: 500;
+  color: #666;
+  min-width: 24px;
+}
+
+input:checked ~ .toggle-text {
+  color: #2196F3;
+}
+
+.toggle-button {
+  padding: 6px 16px;
+  border: none;
+  border-radius: 16px;
+  background: #1a73e8;
+  color: white;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.toggle-button:hover {
+  background: #1557b0;
+}
+
+.toggle-button.off {
+  background: #666;
+}
+
+.toggle-button.off:hover {
+  background: #555;
+}
+
+.shortcuts-list {
+  margin: 0;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 12px;
+}
+
+.shortcut-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px;
+  border-bottom: 1px solid #eee;
+}
+
+.shortcut-item:last-child {
+  border-bottom: none;
+}
+
+.shortcut-info {
+  flex: 1;
+  min-width: 0;
+  margin-right: 10px;
+}
+
+.shortcut-name {
+  font-weight: 500;
+  margin-bottom: 2px;
+  font-size: 14px;
+}
+
+.shortcut-url {
+  color: #666;
+  font-size: 13px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.shortcut-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.delete-btn {
+  background: none;
+  border: none;
+  color: #dc3545;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 0 4px;
+  line-height: 1;
+}
+
+.delete-btn:hover {
+  color: #c82333;
+}
+
+/* Unified button base styles */
+button {
+  height: 32px;
+  padding: 0 16px;
+  border: none;
+  border-radius: 4px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.add-button {
+  display: block;
+  width: 100%;
+  background-color: #2196F3;
+  color: white;
+}
+
+.add-button:hover {
+  background-color: #1976D2;
+}
+
+.shortcut-form {
+  margin: 0;
+  padding: 6px;
+  border: 1px solid #eee;
+  border-radius: 8px;
+}
+
+.shortcut-form.hidden {
+  display: none;
+}
+
+.shortcut-form input {
+  display: block;
+  width: 100%;
+  margin-bottom: 8px;
+  padding: 6px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.shortcut-form h3 {
+  margin: 3px 0 5px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.form-help {
+  font-size: 13px;
+  color: #666;
+  margin: 8px 0;
+}
+
+.form-help ul {
+  margin: 4px 0;
+  padding-left: 20px;
+}
+
+.form-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.form-buttons button {
+  flex: 1;
+}
+
+#save-shortcut {
+  background-color: #2196F3;
+  color: white;
+}
+
+#save-shortcut:hover {
+  background-color: #1976D2;
+}
+
+#cancel-shortcut {
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+/* Confirm dialog styles */
+.confirm-dialog {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.confirm-dialog.hidden {
+  display: none;
+}
+
+.confirm-dialog-content {
+  background: white;
+  padding: 16px;
+  border-radius: 8px;
+  width: 300px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.confirm-dialog-message {
+  margin-bottom: 16px;
+  text-align: center;
+  color: #333;
+  font-size: 14px;
+}
+
+.confirm-dialog-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.confirm-dialog-buttons button {
+  min-width: 80px;
+}
+
+.confirm-dialog-cancel {
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+.confirm-dialog-cancel:hover {
+  background-color: #e8e8e8;
+}
+
+.confirm-dialog-ok {
+  background-color: #dc3545;
+  color: white;
+}
+
+.confirm-dialog-ok:hover {
+  background-color: #c82333;
+}
+
+.alert-dialog-ok {
+  background-color: #2196F3;
+  color: white;
+}
+
+.alert-dialog-ok:hover {
+  background-color: #1976D2;
+}
+
+.pencil-toggle {
+  margin-left: 10px;
+}
+
+.toggle-icon {
+  font-size: 16px;
+}
+
+.toggle-text {
+  font-size: 12px;
+  font-weight: 500;
+  color: #666;
+}
+
+.toggle-button.active .toggle-text {
+  color: #1a73e8;
+}
+
+h2 {
+  margin: 0;
+  color: #333;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.header-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 4px;
+}
+
+
+.sync-toggle-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+  border-top: 1px solid #eee;
+}
+
+.sync-toggle-container .title-section {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #333;
+}
+
+.sync-icon {
+  font-size: 16px;
+  margin-right: 8px;
+}
+
+/* Speech Bubble Styles */
+.speech-bubble {
+  position: fixed;
+  background: #fffded;
+  border: 1px solid #e0dcc8;
+  border-radius: 12px;
+  padding: 12px;
+  width: 200px;
+  font-size: 12px;
+  color: #333;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  z-index: 1000;
+  transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.speech-bubble.hidden {
+  opacity: 0;
+  transform: scale(0.95);
+  pointer-events: none;
+}
+
+/* Speech bubble tail */
+.speech-bubble::before {
+  content: '';
+  position: absolute;
+  left: 20px;
+  top: -8px;
+  transform: rotate(-90deg);
+  border-style: solid;
+  border-width: 8px 8px 8px 0;
+  border-color: transparent #fffded transparent transparent;
+  z-index: 1;
+}
+
+.speech-bubble::after {
+  content: '';
+  position: absolute;
+  left: 20px;
+  top: -9px;
+  transform: rotate(-90deg);
+  border-style: solid;
+  border-width: 8px 8px 8px 0;
+  border-color: transparent #e0dcc8 transparent transparent;
+  z-index: 0;
+}
+
+/* Position specific bubbles */
+.pencil-info {
+  left: 30px;
+  top: 45px;
+}
+
+.sync-info {
+  left: 30px;
+  top: 100px;
+}
+
+/* Speech bubble content styles */
+.speech-bubble p {
+  margin: 0 0 8px 0;
+  line-height: 1.4;
+}
+
+.speech-bubble ul {
+  margin: 0;
+  padding-left: 20px;
+  list-style-type: none;
+}
+
+.speech-bubble li {
+  position: relative;
+  margin: 4px 0;
+  padding-left: 16px;
+}
+
+.speech-bubble li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: #666;
+}
+
+/* Acknowledge button styles */
+.info-acknowledge {
+  display: block;
+  width: 100%;
+  padding: 6px;
+  margin-top: 10px;
+  background: #2196F3;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: background 0.2s;
+}
+
+.info-acknowledge:hover {
+  background: #1976D2;
+}
+
+/* Icon hover styles */
+.pencil-icon, .sync-icon {
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.pencil-icon:hover, .sync-icon:hover {
+  opacity: 0.7;
+}
+
+/* Container positioning */
+.container {
+  position: relative;
+}
+
+/* Enter Key Toggle Container */
+.enter-key-toggle-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+  border-top: 1px solid #eee;
+}
+
+.enter-key-toggle-container .title-section {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #333;
+}
+
+.enter-key-icon {
+  font-size: 16px;
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+.enter-key-icon:hover {
+  opacity: 0.7;
+}
+
+/* Position for enter key info bubble */
+.enter-key-info {
+  left: 30px;
+  top: 155px;
+}
+
+
+/* Text Direction Container Styles */
+.text-direction-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+  border-top: 1px solid #eee;
+}
+
+.text-direction-container .title-section {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #333;
+}
+
+.text-direction-icon {
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.text-direction-icon:hover {
+  opacity: 0.7;
+}
+
+/* Text Direction Select Styles */
+.direction-select-wrapper {
+  position: relative;
+}
+
+#text-direction-select {
+  appearance: none;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 4px 24px 4px 8px;
+  font-size: 12px;
+  cursor: pointer;
+  min-width: 100px;
+}
+
+.direction-select-wrapper::after {
+  content: '';
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 4px solid #666;
+  pointer-events: none;
+}
+
+#text-direction-select:hover {
+  border-color: #999;
+}
+
+#text-direction-select:focus {
+  outline: none;
+  border-color: #2196F3;
+}
+
+/* Text Direction Info Bubble Position */
+.text-direction-info {
+  left: 30px;
+  top: 210px;
+}
