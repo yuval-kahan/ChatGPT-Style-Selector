@@ -129,21 +129,6 @@ A powerful Chrome extension that enhances your ChatGPT experience by providing s
 - UI/UX improvements
 - Various bug fixes
 
-### Major Past Releases
-**3.0.0**
-- Complete performance optimization
-- UI redesign
-- Core functionality upgrade
-
-**2.0.0**
-- Added style sync
-- Text direction support
-- Keyboard enhancements
-
-**1.0.0**
-- Initial release
-- Basic style switching
-- Core functionality
 
 ## 💡 Support & Contribution
 
