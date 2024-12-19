@@ -153,3 +153,10 @@ MIT License - See LICENSE file
 - ChatGPT community
 - Contributors
 - Open source projects used
+- 
+![Screenshot 2024-12-19 191424](https://github.com/user-attachments/assets/0369518d-b38d-43a5-846d-35c4274a7582)
+![Screenshot 2024-12-19 191514](https://github.com/user-attachments/assets/70ec59ad-0c84-4871-abaa-a78a4b3c93e0)
+![Screenshot 2024-12-19 191536](https://github.com/user-attachments/assets/274d4412-9c3f-4b06-8a7c-d39e5966a0fe)
+![Screenshot 2024-12-19 191443](https://github.com/user-attachments/assets/72e894ba-d662-4c6c-9e27-5f30489d4aa2)
+
+  
